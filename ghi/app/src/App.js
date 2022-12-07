@@ -5,6 +5,8 @@ import VehiclesList from './VehiclesList'
 import VehiclesForm from './VehiclesForm'
 import ManufacturerForm from './ManufacturerForm'
 import ManufacturerList from './ManufacturerList';
+import AutomobileForm from './AutomobileForm';
+import AutomobileList from './AutomobileList';
 
 function App() {
   // if( props.models === undefined) {
@@ -21,8 +23,8 @@ function App() {
           <Route path="vehicle/new" element={<VehiclesForm />} />
           <Route path="manufacturers" element={<ManufacturerList/> } />
           <Route path="manufacturers/new" element={<ManufacturerForm />} />
-
-
+          <Route path="automobiles/new" element={<AutomobileForm />} />
+          <Route path="automobiles/" element={<AutomobileList />} />
         </Routes>
       </div>
     </BrowserRouter>
