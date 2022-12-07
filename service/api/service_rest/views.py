@@ -3,9 +3,8 @@ from django.views.decorators.http import require_http_methods
 import json
 
 # Create your views here.
-from .models import AutomobileVO, Appointment, Technician
+from .models import Appointment, Technician
 from .encoders import (
-        AutomobileVOVinEncoder,
         AppointmentEncoder,
         TechnicianEncoder)
 
@@ -46,10 +45,18 @@ def api_appointments(request):
     else:
         try:
             content = json.loads(request.body)
-            technician_id = content["technician_id"]
-            technician = Technician.objects.get(id=technician_id)
-            content["technician"] = technician
+            try:
+                technician = content["technician"]
+                technician = Technician.objects.get(id=technician)
+                content["technician"] = technician
+            except:
+                response = JsonResponse(
+                    {"message": "Invalid technician id"}
+                )
+                response.status_code = 400
+                return response
             appointment = Appointment.objects.create(**content)
+            appointment.compare_vins()
             return JsonResponse(
                 appointment,
                 encoder=AppointmentEncoder,
@@ -57,7 +64,7 @@ def api_appointments(request):
             )
         except:
             response = JsonResponse(
-                {"message": "Could not create the vehicle model"}
+                {"message": "Could not create the appointment"}
             )
             response.status_code = 400
             return response
