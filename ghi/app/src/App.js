@@ -7,6 +7,8 @@ import ManufacturerForm from './ManufacturerForm'
 import ManufacturerList from './ManufacturerList';
 import AutomobileForm from './AutomobileForm';
 import AutomobileList from './AutomobileList';
+import TechnicianForm from './TechnicianForm';
+import AppointmentForm from './AppointmentForm';
 
 function App() {
   // if( props.models === undefined) {
@@ -25,6 +27,8 @@ function App() {
           <Route path="manufacturers/new" element={<ManufacturerForm />} />
           <Route path="automobiles/new" element={<AutomobileForm />} />
           <Route path="automobiles/" element={<AutomobileList />} />
+          <Route path="technicians/new" element={<TechnicianForm />} />
+          <Route path="appointments/new" element={<AppointmentForm />} />
         </Routes>
       </div>
     </BrowserRouter>

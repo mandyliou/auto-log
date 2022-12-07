@@ -46,8 +46,8 @@ def api_appointments(request):
         try:
             content = json.loads(request.body)
             try:
-                technician = content["technician"]
-                technician = Technician.objects.get(id=technician)
+                technician_id = content["technician_id"]
+                technician = Technician.objects.get(id=technician_id)
                 content["technician"] = technician
             except:
                 response = JsonResponse(
