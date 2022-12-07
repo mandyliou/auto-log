@@ -3,6 +3,8 @@ import MainPage from './MainPage';
 import Nav from './Nav';
 import VehiclesList from './VehiclesList'
 import VehiclesForm from './VehiclesForm'
+import ManufacturerForm from './ManufacturerForm'
+import ManufacturerList from './ManufacturerList';
 
 function App() {
   // if( props.models === undefined) {
@@ -17,6 +19,8 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="vehicle" element={<VehiclesList />} />
           <Route path="vehicle/new" element={<VehiclesForm />} />
+          <Route path="manufacturers" element={<ManufacturerList/> } />
+          <Route path="manufacturers/new" element={<ManufacturerForm />} />
 
 
         </Routes>
