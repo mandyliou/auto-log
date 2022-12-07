@@ -13,6 +13,12 @@ function Nav() {
             <li className="nav-item">
               <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="vehicle/new/">Create a Model</NavLink>
+            </li>
+            {/* <li className="nav-item">
+              <NavLink className="nav-link" to="vehicles/new/">Create a Model</NavLink>
+            </li> */}
           </ul>
         </div>
       </div>
