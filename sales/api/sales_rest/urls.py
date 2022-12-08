@@ -7,4 +7,5 @@ urlpatterns = [
     path('salescustomers/', api_list_sales_customers,
          name="api_list_sales_customers"),
     path('salerecords/', api_list_sale_records, name="api_list_sale_records"),
+    # path('salesreps/<int:employee_id>/salerecords/', api_list_sale_records, name="api_employee_sales_records")
 ]

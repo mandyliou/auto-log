@@ -5,10 +5,9 @@ from django.db import models
 class AutomobileVO(models.Model):
     import_href = models.CharField(max_length=200, unique=True)
     vin = models.CharField(max_length=25, unique=True, null=True)
-    # sold = models.BooleanField()
 
 class SalesPerson(models.Model):
-    employee_id = models.CharField(max_length=100)
+    employee_id = models.CharField(max_length=100, unique=True)
     name = models.CharField(max_length=100)
 
 

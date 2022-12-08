@@ -12,9 +12,8 @@ class AutomobileVOEncoder(ModelEncoder):
     model = AutomobileVO
     properties = [
         "vin",
-        # "sold",
         "import_href"
-        # "id"
+
     ]
 
 class SalesPersonEncoder(ModelEncoder):
@@ -44,17 +43,10 @@ class CustomerListEncoder(ModelEncoder):
 class SalesRecordEncoder(ModelEncoder):
     model = SalesRecord
     properties = [
-        # "automobile",
-        # "customer",
-        # "sales_person",
         "price",
         "id"
     ]
-    # encoders = {
-    #     "automobile": AutomobileVOEncoder(),
-    #     "customer": CustomerEncoder(),
-    #     "sales_person": SalesPersonEncoder(),
-    # }
+
     def get_extra_data(self, o):
         return {
             "sales_customer": o.sales_customer.name,
@@ -112,8 +104,7 @@ def api_list_sale_records(request):
             return JsonResponse({"message": "Invalid Sales Person"}, status=400)
         try:
             sales_customer_phone = content["sales_customer"]
-            sales_customer = Customer.objects.get(
-                phone=sales_customer_phone)
+            sales_customer = Customer.objects.get(phone=sales_customer_phone)
             content["sales_customer"] = sales_customer
         except Customer.DoesNotExist:
             return JsonResponse({"message": "Invalid customer phone number"}, status=400)
