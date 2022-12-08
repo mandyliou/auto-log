@@ -46,8 +46,8 @@ def api_appointments(request):
         try:
             content = json.loads(request.body)
             try:
-                technician = content["technician"]
-                technician = Technician.objects.get(id=technician)
+                technician_id = content["technician_id"]
+                technician = Technician.objects.get(id=technician_id)
                 content["technician"] = technician
             except:
                 response = JsonResponse(
@@ -68,3 +68,26 @@ def api_appointments(request):
             )
             response.status_code = 400
             return response
+
+
+@require_http_methods(["DELETE", "GET", "PUT"])
+def api_appointment(request, pk):
+    if request.method == "GET":
+        appointment = Appointment.objects.get(id=pk)
+        return JsonResponse(
+            appointment,
+            encoder=AppointmentEncoder,
+            safe=False,
+        )
+    elif request.method == "DELETE":
+        count, _ = Appointment.objects.filter(id=pk).delete()
+        return JsonResponse({"deleted": count > 0})
+    else:
+        content = json.loads(request.body)
+        Appointment.objects.filter(id=pk).update(**content)
+        appointment = Appointment.objects.get(id=pk)
+        return JsonResponse(
+            appointment,
+            encoder=AppointmentEncoder,
+            safe=False
+        )

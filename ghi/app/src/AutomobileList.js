@@ -1,10 +1,10 @@
 import React from "react";
 
-class VehiclesList extends React.Component {
+class AutomobileList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            models: []
+            autos: []
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -16,11 +16,11 @@ class VehiclesList extends React.Component {
     }
 
     async componentDidMount() { // used to update state & state will rerender
-        const url =  `http://localhost:8100/api/models/`;
+        const url =  `http://localhost:8100/api/automobiles/`;
         let response = await fetch(url);
         if (response.ok) {
             let data = await response.json();
-            this.setState({ "models" : data.models })
+            this.setState({ "autos" : data.autos })
         }
     }
 
@@ -32,23 +32,24 @@ class VehiclesList extends React.Component {
 render() {
     return (
         <>
-        <h1>Vehicle models </h1>
+        <h1>Automobiles</h1>
         <table className='table table-striped' >
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Manufacturer</th>
-                    <th>Picture</th>
+                    <th>Color</th>
+                    <th>Year</th>
+                    <th>VIN</th>
+                    <th>Model</th>
                 </tr>
             </thead>
             <tbody>
-                {this.state.models.map(model => {
+                {this.state.autos.map(auto => {
                     return (
-                        <tr key={model.id}>
-                            <td>{ model.name }</td>
-                            <td>{ model.manufacturer.name }</td>
-                            {/* <td>{ model.picture_url }</td> */}
-                            <td><img src={ model.picture_url } alt="picture_url" /></td>
+                        <tr key={auto.id}>
+                            <td>{auto.color}</td>
+                            <td>{auto.year}</td>
+                            <td>{auto.vin} </td>
+                            <td>{auto.model.name}</td>
                         </tr>
                     )
                 })}
@@ -58,4 +59,4 @@ render() {
     );
 }}
 
-export default VehiclesList;
+export default AutomobileList;

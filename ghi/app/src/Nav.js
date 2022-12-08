@@ -14,7 +14,34 @@ function Nav() {
               <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="vehicle/new/">Create a Model</NavLink>
+              <NavLink className="nav-link" to="vehicle/new/">Create a Vehicle Model</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="vehicle/">Vehicle List</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="manufacturers/new/">Create a Manufacturer</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="manufacturers/">Manufacturer List</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="automobiles/new/">Create an Automobile</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="automobiles/">Automobile List</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="technicians/new/">Create a Technician</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="appointments/">Appointment List</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="appointments/new/">Schedule an Appointment</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="appointments/history/">Service Appointment History</NavLink>
             </li>
 
             <li className="nav-item">
@@ -37,9 +64,6 @@ function Nav() {
             </li>
             {/* <li className="nav-item">
               <NavLink className="nav-link" to="vehicle">Vehicle Models</NavLink>
-            </li> */}
-            {/* <li className="nav-item">
-              <NavLink className="nav-link" to="vehicles/new/">Create a Model</NavLink>
             </li> */}
           </ul>
         </div>
