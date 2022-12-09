@@ -46,30 +46,6 @@ class SalesPersonList extends React.Component {
         this.getEmployeeRecord()
     }
 
-    // async filtered_record(event) {
-    //     const
-
-    // }
-
-
-    // async componentDidMount() { // used to update state & state will rerender
-    //     const url =  `http://localhost:8090/api/salesreps/`;
-    //     const recordsUrl = 'http://localhost:8090/api/salerecords/';
-    //     let response = await fetch(url);
-    //     let response2 = await fetch(recordsUrl);
-
-    //     if (response.ok & response2.ok) {
-    //         let data = await response.json();
-    //         let data2 = await response2.json();
-    //         this.setState({
-    //             "sales_persons" : data.sales_persons,
-    //             "sale_records" : data2.sale_records,
-    //             "filtered_records": data.sales_persons.employee_id
-
-    //         })
-
-    //     }
-    // }
 
 
 

@@ -27,7 +27,7 @@ class TechnicianForm extends React.Component {
         const response = await fetch(url, fetchConfig);
         if (response.ok) {
             const newTech = await response.json();
-            console.log(newTech)
+            // console.log(newTech)
             const cleared = {
                 name: '',
                 employee_number: '',

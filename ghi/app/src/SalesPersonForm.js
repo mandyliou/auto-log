@@ -32,7 +32,7 @@ class SalesPersonForm extends React.Component {
         const response = await fetch(url, fetchConfig);
         if (response.ok) {
             const newEmployee= await response.json();
-            console.log(newEmployee)
+            // console.log(newEmployee)
             const cleared = {
                 name: '',
                 employee_id: '',
