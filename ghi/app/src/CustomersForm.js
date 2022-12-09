@@ -32,7 +32,7 @@ class CustomersForm extends React.Component {
     const response = await fetch(url, fetchConfig);
     if (response.ok) {
         const newCustomer= await response.json();
-        console.log(newCustomer)
+        // console.log(newCustomer)
         const cleared = {
             name: '',
             address: '',

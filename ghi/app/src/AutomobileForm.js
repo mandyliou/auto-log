@@ -42,7 +42,7 @@ class AutomobileForm extends React.Component {
     const response = await fetch(url, fetchConfig);
     if (response.ok) {
         const newAuto = await response.json();
-        console.log(newAuto)
+        // console.log(newAuto)
         const cleared = {
         color: '',
         year: '',
