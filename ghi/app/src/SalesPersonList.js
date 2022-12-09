@@ -6,7 +6,7 @@ class SalesPersonList extends React.Component {
         this.state = {
             sales_persons: [],
             sale_records: [],
-            // filtered_record: []
+           
         }
         this.getEmployee = this.getEmployee.bind(this);
         this.getEmployeeRecord = this.getEmployeeRecord.bind(this);
