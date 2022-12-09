@@ -7,7 +7,7 @@ class AppointmentHistory extends React.Component {
       appointments: [],
       vin: '',
       submitted: false,
-      error: false,
+      hasError: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -31,12 +31,11 @@ class AppointmentHistory extends React.Component {
     );
 
     if (appointments.length === 0) { // check if the vin exists in the appointments
-      window.alert("Error, invalid VIN");
-      this.setState({ appointments: [], error: true }); // display an error message
+      window.alert("Error, invalid VIN"); // display an error message
+      this.setState({ appointments: [], hasError: true });
       return;
-    } else if (appointments.length > 0 ) {
-        this.setState({ appointments, error: false });
-        this.setState({ vin: '', error: false, }); // update the state with the filtered appointment
+    } else {
+        this.setState({ appointments, hasError: false }); // update the state with the filtered appointments
     }
   }
 
