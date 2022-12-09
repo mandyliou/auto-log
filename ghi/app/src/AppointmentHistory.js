@@ -32,11 +32,12 @@ class AppointmentHistory extends React.Component {
 
     if (appointments.length === 0) { // check if the vin exists in the appointments
       window.alert("Error, invalid VIN");
-      this.setState({ error: true }); // display an error message
+      this.setState({ appointments: [], error: true }); // display an error message
       return;
+    } else if (appointments.length > 0 ) {
+        this.setState({ appointments, error: false });
+        this.setState({ vin: '', error: false, }); // update the state with the filtered appointment
     }
-    this.setState({ appointments, error: false });
-    this.setState({ vin: '', error: false, }); // update the state with the filtered appointment
   }
 
   async componentDidMount() {
