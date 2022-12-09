@@ -7,6 +7,7 @@ class AppointmentHistory extends React.Component {
       appointments: [],
       vin: '',
       submitted: false,
+      error: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,11 +31,12 @@ class AppointmentHistory extends React.Component {
     );
 
     if (appointments.length === 0) { // check if the vin exists in the appointments
-      window.alert("Error, invalid VIN"); // display an error message
+      window.alert("Error, invalid VIN");
+      this.setState({ error: true }); // display an error message
       return;
     }
-
-    this.setState({ appointments }); // update the state with the filtered appointments
+    this.setState({ appointments, error: false });
+    this.setState({ vin: '', error: false, }); // update the state with the filtered appointment
   }
 
   async componentDidMount() {
@@ -66,6 +68,16 @@ class AppointmentHistory extends React.Component {
         </form>
         {this.state.submitted && (
           <table className="table table-striped">
+            <thead>
+                <tr>
+                    <th>VIN</th>
+                    <th>Vehicle Owner</th>
+                    <th>Date & Time</th>
+                    <th>Reason</th>
+                    <th>Technician</th>
+                    <th>VIP</th>
+                </tr>
+            </thead>
             <tbody>
               {this.state.appointments.map(appointment => {
                 return (
