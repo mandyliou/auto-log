@@ -11,8 +11,8 @@ Team:
 ## Instructions to run application
 1. Fork the project from the respective gitlab repository
 2. Open terminal and cd into desired folder to host the project
-    - git clone <<repository link>>
-    - cd <<project name>>
+    - git clone _repository link_
+    - cd _project name_
 3. Run the following command to open the application in Visual Studio Code
     - code .
 4. Run the following commands after opening the project in the desired folder:
