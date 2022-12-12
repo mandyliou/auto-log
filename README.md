@@ -27,6 +27,7 @@ INVENTORY MICROSERVICE (Manufacturers, vehicle models, and automobiles):
 MANUFACTURERS
 
 | Method | URL | Expected Response | PORT
+
 | GET | http://localhost:8100/api/manufacturers/ | List manufacturers | 8100
 ![Alt text](img/Screenshot%202022-12-12%20at%201.20.45%20PM.png)
 
@@ -46,6 +47,7 @@ MANUFACTURERS
 VEHICLE MODELS
 
 | Method | URL | Expected Response | PORT
+
 | GET | http://localhost:8100/api/models/ | List vehicle models | 8100
 ![Alt text](img/Screenshot%202022-12-12%20at%201.35.20%20PM.png)
 
@@ -65,6 +67,7 @@ VEHICLE MODELS
 AUTOMOBILES
 
 | Method | URL | Expected Response | PORT
+
 | GET | http://localhost:8100/api/automobiles/ | List automobiles | 8100
 ![Alt text](img/Screenshot%202022-12-12%20at%201.39.51%20PM.png)
 
@@ -85,6 +88,7 @@ AUTOMOBILES
 SALES MICROSERVICE
 
 | Method | URL | Expected Response | PORT
+
 | GET | http://localhost:8090/api/salerecords/ | List of sales | 8090
 ![Alt text](img/Screenshot%202022-12-12%20at%201.43.50%20PM.png)
 
@@ -107,6 +111,7 @@ SALES MICROSERVICE
 SERVICE MICROSERVICE
 
 | Method | URL | Expected Response | PORT
+
 | GET | http://localhost:8080/api/technicians/ | List of technicians | 8080
 ![Alt text](img/Screenshot%202022-12-12%20at%201.50.50%20PM.png)
 
