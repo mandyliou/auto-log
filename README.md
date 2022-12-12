@@ -23,7 +23,7 @@ Team:
 ## PORTS and URL Paths
 INVENTORY MICROSERVICE
 
-
+MANUFACTURERS
 | Method | URL | Expected Response | PORT
 
 | GET | http://localhost:8100/api/manufacturers/ | List manufacturers | 8100
@@ -37,7 +37,7 @@ INVENTORY MICROSERVICE
 | DELETE | http://localhost:8100/api/manufacturers/:id/  | Delete a specific manufacturer | 8100
 
 
-
+VEHICLE MODELS
 | Method | URL | Expected Response | PORT
 
 | GET | http://localhost:8100/api/models/ | List vehicle models | 8100
@@ -51,7 +51,7 @@ INVENTORY MICROSERVICE
 | DELETE | http://localhost:8100/api/models/:id/ | Delete a specific vehicle model | 8100
 
 
-
+AUTOMOBILES
 | Method | URL | Expected Response | PORT
 
 | GET | http://localhost:8100/api/automobiles/ | List automobiles | 8100
@@ -115,10 +115,14 @@ Technician: The technician model serves as an entity in which specific values wi
 Explain your models and integration with the inventory
 microservice, here.
 
-AutomobileVO: AutomobileVO is a value object with respect to the Automobile model which is located in the inventory microservice. The purpose of this model is to relate the automobile information to the specific sales record, customer, and sales person. This information will ultimately be reflected in the Sales record model, where all other models are contingent on the AutomobileVO model. This relation is made possible through the construction of a ForeignKey in tandem with the poller, which serves to pull the automobile vin from the inventory api and into the sales microservice.
+AutomobileVO: AutomobileVO is a value object with respect to the Automobile model, which is located in the inventory microservice. The purpose of this model is to relate the automobile information to the specific sales record, customer, and sales person. This information will ultimately be reflected in the Sales record model, where all other models are contingent on the AutomobileVO model. This relation is made possible through the construction of a ForeignKey in tandem with the poller, which serves to pull the automobile vin and import_href from the inventory api and into the sales microservice.
 
-Customer: The customer model serves as an entity in which specific values within its value objects can be attributed to the mdoel. The customer exists as a foreign key in the sales record.
+Customer: The customer model serves as an entity in which specific values within its value objects can be attributed to the model. The customer exists as a foreign key in the sales record. This model has attributes of name, address, and phone number of the customer.
 
-SalesPerson: The salesperson model serves as an entity in which specific values within its value objects can be attributed to the model. The salesperson exists as a foregin key in the sales record.
+SalesPerson: The salesperson model serves as an entity in which specific values within its value objects can be attributed to the model. The salesperson exists as a foregin key in the sales record. This model has attributes of the sales employee with attributes such as the employee_id and employee's name. 
 
-SalesRecord: The SalesRecord model serves as an entity in which the other models exists in the salesrecord values as foreign keys. Their relations are made possible by the existence of the automobile value object, which was derived from the inventory microservices.
+SalesRecord: The SalesRecord model serves as an entity in which the other models exists in the salesrecord values as foreign keys. Their relations are made possible by the existence of the automobile value object, which was derived from the inventory microservices. This model has attributes of the sales record for each employee(sales_person), along with attributes such as the customer(sales_customer), automobile(sales_automobile), and price. 
+
+As shown in the diagram, the Sales microservice is on port 8090 and url is http://localhost:8090. 
+
+Sales
