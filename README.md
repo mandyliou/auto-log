@@ -21,29 +21,35 @@ Team:
 5. View the application on http://localhost:3000
 
 ## PORTS and URL Paths
-INVENTORY MICROSERVICE
+INVENTORY MICROSERVICE (Manufacturers, vehicle models, and automobiles)
 
 MANUFACTURERS
+
 | Method | URL | Expected Response | PORT
 
 | GET | http://localhost:8100/api/manufacturers/ | List manufacturers | 8100
+![Alt text](img/Screenshot%202022-12-12%20at%201.20.45%20PM.png)
 
 | POST | http://localhost:8100/api/manufacturers/ | Create a manufacturer |  8100
+![Alt text](img/Screenshot%202022-12-12%20at%201.19.12%20PM.png)
 
 | GET | http://localhost:8100/api/manufacturers/:id/ | Get a specific manufacturer |8100
+![Alt text](img/Screenshot%202022-12-12%20at%201.20.14%20PM.png)
 
 | PUT | http://localhost:8100/api/manufacturers/:id/ | Update a specific manufacturer | 8100
+![Alt text](img/Screenshot%202022-12-12%20at%201.22.04%20PM.png)
 
 | DELETE | http://localhost:8100/api/manufacturers/:id/  | Delete a specific manufacturer | 8100
-
+![Alt text](img/Screenshot%202022-12-12%20at%201.22.59%20PM.png)
 
 VEHICLE MODELS
+
 | Method | URL | Expected Response | PORT
 
 | GET | http://localhost:8100/api/models/ | List vehicle models | 8100
 
 | POST | http://localhost:8100/api/models/ |Create a vehicle model | 8100
-
+![Alt text](img/Screenshot%202022-12-12%20at%201.24.28%20PM.png)
 | GET | http://localhost:8100/api/models/:id/ | Get a specific vehicle model | 8100
 
 | PUT | http://localhost:8100/api/models/:id/ |Update a specific vehicle model | 8100
@@ -52,6 +58,7 @@ VEHICLE MODELS
 
 
 AUTOMOBILES
+
 | Method | URL | Expected Response | PORT
 
 | GET | http://localhost:8100/api/automobiles/ | List automobiles | 8100
@@ -119,10 +126,8 @@ AutomobileVO: AutomobileVO is a value object with respect to the Automobile mode
 
 Customer: The customer model serves as an entity in which specific values within its value objects can be attributed to the model. The customer exists as a foreign key in the sales record. This model has attributes of name, address, and phone number of the customer.
 
-SalesPerson: The salesperson model serves as an entity in which specific values within its value objects can be attributed to the model. The salesperson exists as a foregin key in the sales record. This model has attributes of the sales employee with attributes such as the employee_id and employee's name. 
+SalesPerson: The salesperson model serves as an entity in which specific values within its value objects can be attributed to the model. The salesperson exists as a foregin key in the sales record. This model has attributes of the sales employee with attributes such as the employee_id and employee's name.
 
-SalesRecord: The SalesRecord model serves as an entity in which the other models exists in the salesrecord values as foreign keys. Their relations are made possible by the existence of the automobile value object, which was derived from the inventory microservices. This model has attributes of the sales record for each employee(sales_person), along with attributes such as the customer(sales_customer), automobile(sales_automobile), and price. 
+SalesRecord: The SalesRecord model serves as an entity in which the other models exists in the salesrecord values as foreign keys. Their relations are made possible by the existence of the automobile value object, which was derived from the inventory microservices. This model has attributes of the sales record for each employee(sales_person), along with attributes such as the customer(sales_customer), automobile(sales_automobile), and price.
 
-As shown in the diagram, the Sales microservice is on port 8090 and url is http://localhost:8090. 
-
-Sales
+As shown in the diagram, the Sales microservice is on port 8090 and url is http://localhost:8090.
