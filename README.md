@@ -22,9 +22,9 @@ Team:
 5. View the application on http://localhost:3000
 
 ## PORTS and URL Paths
-###INVENTORY MICROSERVICE (Manufacturers, vehicle models, and automobiles):
+##INVENTORY MICROSERVICE (Manufacturers, vehicle models, and automobiles):
 --------------------------------------------------------------------------------------------
-####MANUFACTURERS
+##MANUFACTURERS
 
 | Method | URL | Expected Response | PORT
 | GET | http://localhost:8100/api/manufacturers/ | List manufacturers | 8100
@@ -43,7 +43,7 @@ Team:
 ![Alt text](img/Screenshot%202022-12-12%20at%201.22.59%20PM.png)
 
 --------------------------------------------------------------------------------------------
-####VEHICLE MODELS
+##VEHICLE MODELS
 
 | Method | URL | Expected Response | PORT
 | GET | http://localhost:8100/api/models/ | List vehicle models | 8100
@@ -62,7 +62,7 @@ Team:
 ![Alt text](img/Screenshot%202022-12-12%20at%201.36.50%20PM.png)
 
 --------------------------------------------------------------------------------------------
-####AUTOMOBILES
+##AUTOMOBILES
 
 | Method | URL | Expected Response | PORT
 | GET | http://localhost:8100/api/automobiles/ | List automobiles | 8100
@@ -82,7 +82,7 @@ Team:
 
 
 --------------------------------------------------------------------------------------------
-###SALES MICROSERVICE
+##SALES MICROSERVICE
 
 | Method | URL | Expected Response | PORT
 | GET | http://localhost:8090/api/salerecords/ | List of sales | 8090
@@ -104,7 +104,7 @@ Team:
 ![Alt text](img/Screenshot%202022-12-12%20at%201.46.25%20PM.png)
 
 --------------------------------------------------------------------------------------------
-###SERVICE MICROSERVICE
+## SERVICE MICROSERVICE
 
 | Method | URL | Expected Response | PORT
 | GET | http://localhost:8080/api/technicians/ | List of technicians | 8080
@@ -122,7 +122,7 @@ Team:
 | POST | http://localhost:8080/api/appointments/ | Create a new appointment | 8080
 ![Alt text](img/Screenshot%202022-12-12%20at%201.49.44%20PM.png)
 
-
+--------------------------------------------------------------------------------------------
 
 ## Service microservice
 
