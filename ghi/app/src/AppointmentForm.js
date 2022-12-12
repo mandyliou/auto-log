@@ -43,9 +43,11 @@ class AppointmentForm extends React.Component {
 
     const response = await fetch(url, fetchConfig);
     if (response.ok) {
-        const newApp = await response.json();
-        // console.log(newApp)
-        const cleared = {
+      const newApp = await response.json();
+      // Display pop-up message
+      window.alert('Appointment created successfully');
+      // Clear the form
+      const cleared = {
         vehicle_owner: '',
         date_time: '',
         vin: '',
@@ -53,6 +55,10 @@ class AppointmentForm extends React.Component {
         technician: '',
       };
       this.setState(cleared);
+    }
+    else {
+      // Display pop-up message
+      window.alert('Invalid VIN/VIN already registered');
     }
   }
 
